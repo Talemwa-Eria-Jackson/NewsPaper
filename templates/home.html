@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %} Home Page {% endblock title %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+        <div class="pt-4 px-4">
+            <marquee behavior="" direction="">Hey {{ user.username }}, you are most welcome!!!</marquee>
+            <!-- <div>
+                <a href="{% url 'logout' %}">Log Out</a>
+            </div> -->
+        </div>
+    {% else %}
+        <div class="pt-4 px-4">
+            <marquee behavior="" direction="">You are not logged in</marquee>
+            <!-- <div>
+                <a href="{% url 'login' %}">Log Into Your Account</a>
+            </div>
+            <div>
+                <a href="{% url 'signup' %}">Sign Up For A New Account</a>
+            </div> -->
+        </div>
+    {% endif %}
+
+<!-- A jumbotron example  -->
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">News Paper App</h1>
+            <p class="lead">A simple website built with Django</p>
+            <hr class="my-4">
+            <a class="btn btn-primary btn-sm" href="{% url 'article_list' %}" role="button">View All Articles</a>
+          </div>
+    </div>
+
+{% endblock content %}

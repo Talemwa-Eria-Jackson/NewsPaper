@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %} Login Page {% endblock title %}
+
+{% block content %}
+
+<div class="container">
+    <div class="d-flex align-items-center vh-100">  <!--making the div vertically centered -->
+        <!-- <div class="row"> -->
+            <div class="mx-auto">                   <!--making the div horizontally centered -->
+                <h1 class="double-space">Login Page</h1>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div>
+                        <button type="submit" class="btn btn-sm btn-outline-primary">Login</button> | <a href="{% url 'signup' %}"  class="btn btn-sm btn-outline-primary">Sign Up Instead</a> | <a href="{% url 'password_reset' %}"  class="btn btn-sm btn-outline-primary">Forgot Password?</a>
+                    </div>
+                </form>
+        
+                <!-- <div>
+                    <a href="{% url 'signup' %}">Sign Up Instead</a>
+                </div> -->
+            </div>
+        <!-- </div> -->
+    </div>
+</div>
+  
+    
+
+{% endblock content %}

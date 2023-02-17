@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block title %} Edit Article {% endblock title %}
+
+{% block content %}
+
+    <div class="container">
+        <h1>Edit Article</h1>
+
+        <form action="" method="post">
+            {% csrf_token %}
+            <!-- {{form.as_p}} -->
+            {{ form|crispy }}
+
+            <input type="submit" value="Update Article" class="btn btn-outline-info btn-sm text-center">
+        </form>
+    </div>
+
+{% endblock content %}
